@@ -15,17 +15,19 @@ int main()
     cout << "Input a number from 0 to 100" << endl << "it will be conveted to a Roman numbers"<< endl;
     cin >> a ;
 
-	while(a>0)
+	while(a > 0)
 	{
         int b;
 	    b = a/A_num[i];
 	    a = a%A_num[i];
 	   while(b--)
 	   {
-		cout<<R_m[i];
+		cout<<R_m[i];    
 	   }
 	   i--;
 	}
 
     cout << endl;
+
+	return 0;
 }

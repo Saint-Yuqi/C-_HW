@@ -8,43 +8,40 @@ int main()
 {
     int a , b ,c ; // means the sides of triangel
     cin >> a >> b >> c;
-
-    if (a+b >= c && a+c>=b && b+c>=a)
+   
+    // hope c to be the longest side
+    if (a > b)
     {
-        if ((a*a+b*b==c*c)||(a*a+c*c==b*b)||(b*b+c*c==a*a))
+        a ^= b ^= a ^= b; // exchange a and b
+    }
+     
+    if (b > c)
+    {
+         b ^= c ^= b ^= c;   // exchange b and c
+
+    }
+       
+    if (a+b >= c)
+    {
+        if ((a*a+b*b==c*c))
         {
              cout << "it's a right triangle" << endl ;
         }
-        else if((a>b) && (a>c) && (b*b+c*c) < (a*a))
-        {
-             cout << "the triangle is obtuse" <<endl;
-        }
-        else if ((a>b) && (a>c) && (b*b+c*c) > (a*a))
-        {
-             cout << "the triangle is acute" <<endl; 
-        }
-        else if ((b>a) && (b>c) && (a*a+c*c < b*b))
-        {
-             cout << "the triangle is obtuse" <<endl; 
-        }
-        else if ((b>a) && (b>c) && (a*a+c*c) > (b*b))
-        {
-            cout << "the triangle is acute" <<endl; 
-        }
-        else if ((c>a) && (c>b) && (a*a+b*b) < (c*c))
+        else if ((a*a+b*b) < (c*c))
         {
             cout << "the triangle is obtuse" <<endl; 
         }
-        else if ((c>a) && (c>b) && (a*a+b*b > (c*c)))
+        else if ((a*a+b*b > (c*c)))
         {
             cout << "the triangle is acute" <<endl; 
         }
-      
-       
+
     }
     else
     {
         cout<<"it's not a triangel" <<endl;
     }
+
+    return 0;
 
 }

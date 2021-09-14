@@ -16,6 +16,8 @@ int main()
   h = (h>24 ? h%24:h);
   
   cout << setfill('0')<<setw(2) << h <<":"<< setfill('0')<<setw(2) << m << ":" <<setfill('0')<<setw(2) << s <<endl ;
+
+  return 0;
   
 
 

@@ -1,6 +1,4 @@
 #include <iostream>
-#include <cstdlib>
-#include<iomanip>
 
 using namespace std;
 
@@ -9,8 +7,12 @@ using namespace std;
 int main()
 {
     int n , m ,v;
+
     cin >> n >> m;
-     v = ((n%m ==0) || (m%n == 0)? 1: rand());
-   cout <<  v<<endl;
+
+    v = ((n%m ==0) || (m%n == 0));
+    cout << v << endl;
+
+    return(0);
     
 }

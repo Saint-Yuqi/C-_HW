@@ -1,6 +1,5 @@
 #include <iostream>
-#include <cstdlib>
-#include<iomanip>
+
 
 using namespace std;
 
@@ -8,13 +7,23 @@ using namespace std;
 
 int main(){
     int n ; 
-    cin>>n ;
-    int a , b, c, d; // a means the first and second digit, b means the third and forth digit,swap the location of b
+
+    cin>>n ; //the numbers
+
+    //means every digit
+    int a = 0;
+    int b = 0;
+    int c = 0;
+    int d = 0; 
+
     a = int(n/100);
     b = int(n%100);
+
     c = (b/10)+(b%10)*10;
-    d = (a == c ? 1 : rand() );
+    d = (a == c);
     cout << d <<endl;
+
+    return 0;
 
 
 }

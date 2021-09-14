@@ -10,8 +10,11 @@ int main(){
 
     cout<< "a should be greater than b" <<endl;
     cin >> h >>a >>b;
-    d_t=(int)h/(a-b);
+
+    d_t=(int)(h - b)/(a-b) ;
     cout<< d_t << endl;
+
+    return 0;
 
     
 }

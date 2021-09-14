@@ -16,8 +16,9 @@ int main()
    cin >> v >> t ;
    a =(v*t)%d ; 
    b = ((v*t)%d)+ (d) ;
-   c = (v > 0 ? a:b);
+   c = b % d;
    cout << c << endl;
    
+   return 0;
   
 }
