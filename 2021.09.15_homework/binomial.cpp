@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int bi_func(int n , int k)
+int bi_func(int n = 0, int k = 0)
 {
     if (k == 0)
     {
@@ -14,7 +14,7 @@ int bi_func(int n , int k)
     }
     else
     {
-        return bi_func(n-1,k-1)+bi_func(n-1,k);
+        return bi_func(n-1, k-1)+bi_func(n-1, k);
     }
 
     return 0;
@@ -28,7 +28,7 @@ int main()
     cout <<"Please input binomial coefficients(from n to k)" << endl;
     cin >> a >> b;
 
-    cout << "C_n^k = " << bi_func(a,b) << endl;
+    cout << "C_n^k = " << bi_func(a, b) << endl;
 
     return 0;
 

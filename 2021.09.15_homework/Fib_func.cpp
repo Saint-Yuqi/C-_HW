@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int fib_Function(int n)
+int fib_Function(int n = 0)
 {
      if (n <= 0)
      {
@@ -26,7 +26,7 @@ int fib_Function(int n)
 
 int main()
 {
-    int c;
+    int c = 0;
   
     cout << "Input a natural number" << endl;
     cin >> c;
