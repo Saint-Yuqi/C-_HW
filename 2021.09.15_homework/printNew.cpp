@@ -2,62 +2,36 @@
 
 using namespace std;
 
-string printNew(string n = "", string reNew = "", int i = 0)
+void printNew(string n = "", int i = 0, int l = 0)
 {
-    int l = n.length();
+    l = n.length();
 
-    if (i == l)
+    if(i < l)
     {
-        if(l % 2 == 1)
+        if(n[i] != n[l - i - 1] || (i == l - 1))
         {
-            
-            return reNew;
+
+            cout << n[i] ;
+
+            return printNew(n, i + 1, l - 1);
         }
         else
-        {
-            return reNew;
-        }    
-    }
-
-    if(l % 2 == 0)
-    {
-        if(n[i] != n[l-1-i])
-        {                       
-            return printNew(n, reNew + n[i], i + 1);
+        {         
+            return printNew(n,i + 1, l - 1);
         }
-        else
-        {
-            return printNew(n, reNew, i + 1);
-        }
-
-    }
-
-    if(l % 2 == 1)
-    {
-       if(n[i] != n[l-1-i])
-       {
-
-           return printNew(n, reNew + n[i], i + 1);
-       }
-       else
-       {
-           if (i == l-1-i)
-           {
-               return printNew(n, reNew + n[i], i+1);
-           }
-           return printNew(n, reNew, i + 1);
-       }
 
     }
     
-    return n;
+    return;
 }
 
 int main()
 {
-    string text = "";
+    string text;
     cout << "Pleas input a string" << endl;
     cin >> text;
 
-    cout << printNew(text) << endl;
+    printNew(text);
+
+    cout << endl;
 }
