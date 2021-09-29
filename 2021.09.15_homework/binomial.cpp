@@ -20,7 +20,7 @@ int bi_func(int n = 0, int k = 0)
     return EXIT_SUCCESS;
 }
 
-int main()
+int main(int argc, char* argv[])
 {
     int a = 0;
     int b = 0;

@@ -24,7 +24,7 @@ int fib_Function(int n = 0)
     
 }
 
-int main()
+int main(int argc, char* argv[])
 {
     int c = 0;
   

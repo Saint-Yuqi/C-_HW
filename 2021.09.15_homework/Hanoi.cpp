@@ -26,7 +26,7 @@ void hanoi(int n = 0, int from_peg = 0, int to_peg = 0, int tem_peg = 0)
 
 }
 
-int main()
+int main(int argc, char* argv[])
 {
     int n = 0;
     

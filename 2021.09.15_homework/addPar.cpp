@@ -48,7 +48,7 @@ void addPar(string n = "", int i = 0)
     return;
 }
 
-int main()
+int main(int argc, char* argv[])
 {
     string text = "";
 
@@ -60,3 +60,4 @@ int main()
 
     return EXIT_SUCCESS;
 }
+

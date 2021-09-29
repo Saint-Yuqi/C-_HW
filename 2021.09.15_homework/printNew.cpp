@@ -25,7 +25,7 @@ void printNew(string n = "", int i = 0, int l = 0)
     return;
 }
 
-int main()
+int main(int argc, char* argv[])
 {
     string text;
     cout << "Pleas input a string" << endl;
