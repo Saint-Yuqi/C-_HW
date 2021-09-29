@@ -14,7 +14,7 @@ int bi_func(int n = 0, int k = 0)
     }
     else
     {
-        return bi_func(n-1, k-1)+bi_func(n-1, k);
+        return bi_func(n - 1, k - 1)+bi_func(n - 1, k);
     }
 
     return 0;
