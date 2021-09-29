@@ -19,9 +19,9 @@ int fib_Function(int n = 0)
         return fib_Function(n - 1) + fib_Function(n - 2);
 
     }
-        
 
-  
+    return EXIT_SUCCESS; 
+    
 }
 
 int main()

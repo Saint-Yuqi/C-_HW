@@ -5,6 +5,7 @@ using namespace std;
 
 int main()
 {
+    int value_of_scalar = 0;
     int n = 2;
     vector_3D v1(1, 2, 3);
     vector_3D v2(1, 2, 3);
@@ -20,8 +21,8 @@ int main()
     }
 
     {
-        v3 = v1.scalarProduct(v2);
-        v3.printVector();
+        value_of_scalar = v1.scalarProduct(v2);
+        cout << value_of_scalar << endl;
 
     }
 
