@@ -31,9 +31,6 @@ int main()
     cout << "Input a natural number" << endl;
     cin >> c;
     cout << "fib(" << c <<")"<< "=" << fib_Function(c) << endl;
-    return 0;
-
-
-
+    return EXIT_SUCCESS;
 
 }

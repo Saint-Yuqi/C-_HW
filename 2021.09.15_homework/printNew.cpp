@@ -17,7 +17,7 @@ void printNew(string n = "", int i = 0, int l = 0)
         }
         else
         {         
-            return printNew(n,i + 1, l - 1);
+            return printNew(n, i + 1, l - 1);
         }
 
     }
@@ -34,4 +34,6 @@ int main()
     printNew(text);
 
     cout << endl;
+
+    return EXIT_SUCCESS;
 }
