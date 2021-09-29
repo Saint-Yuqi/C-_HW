@@ -20,11 +20,11 @@ struct vector_3D
     
     //methods
    
-    int sumVector(vector_3D v);
+    vector_3D sumVector(vector_3D v);
 
-    int mutiVector(float n);
+    vector_3D mutiVector(float n);
 
-    int crossProduct(vector_3D v);  //it will be a vector which is perpendicular to others
+    vector_3D crossProduct(vector_3D v);  //it will be a vector which is perpendicular to others
 
     int scalarProduct(vector_3D v); //it will be a real number
 

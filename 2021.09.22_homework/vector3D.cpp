@@ -30,42 +30,43 @@ vector_3D::~vector_3D()
 }
 //methods
 
-int vector_3D::sumVector(vector_3D v)
+vector_3D vector_3D::sumVector(vector_3D v)
 {
-    this->x = x + v.x;
-    this->y = y + v.y;
-    this->z = z + v.z;
-    return 0;
+    vector_3D sumV;
+    sumV.x = x + v.x;
+    sumV.y = y + v.y;
+    sumV.z = z + v.z;
+    return sumV;
 }
 
-int vector_3D::mutiVector(float n)
+vector_3D vector_3D::mutiVector(float n)
 {
-    this->x = x * n;
-    this->y = y * n;
-    this->z = z * n;
-    return 0;
+    vector_3D mutiV;
+    mutiV.x = x * n;
+    mutiV.y = y * n;
+    mutiV.z = z * n;
+    return mutiV;
 }
 
 
 int vector_3D::scalarProduct(vector_3D v)
 {
-    this->x = x * v.x;
-    this->y = y * v.y;
-    this->z = z * v.z;
-    return 0;
+    return x * v.x + y * v.y +  z * v.z;
 }
 
-int vector_3D::crossProduct(vector_3D v)
+vector_3D vector_3D::crossProduct(vector_3D v)
 {
-    this->x = y * v.z - v.y * z;
-    this->y = z * v.x - v.z * x;
-    this->z = x * v.y - v.x * y;
-    return 0;
+    vector_3D crossP;
+    crossP.x = y * v.z - v.y * z;
+    crossP.y = z * v.x - v.z * x;
+    crossP.z = x * v.y - v.x * y;
+    return crossP;
 }
 
 void vector_3D::printVector()
 {
     cout << "vector( " << x << "," << y << "," << z << " )";
+    return;
 }
 
 
