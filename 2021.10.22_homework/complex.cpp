@@ -124,6 +124,7 @@ int main(int argc, char* argv[])
     z3 = z4.crossProduct(z3);
     printComplexNumber(z3);
 
+    cout << endl;
     //z^3 - (2 + 5i)z^2 - (17 - 4i)z + (34 - 63i) = 0
     cout << "Let's find the answer of z^3 - (2 + 5i)z^2 - (17 - 4i)z + (34 - 63i) = 0 " << endl;
     for (int a = 0; a < 10; a++)
