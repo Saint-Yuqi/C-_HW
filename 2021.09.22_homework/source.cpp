@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int main()
+int main(int argc, char* argv[])
 {
     int value_of_scalar = 0;
     int n = 2;
