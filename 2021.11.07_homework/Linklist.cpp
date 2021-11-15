@@ -65,23 +65,46 @@ public:
 			return (index >= 0 && index < count);
 		}
 
-		bool operator==(LinkedList& list)
+		bool operator==(LinkedList& list1)
 		{
-			Node* temp = head;
-			if (list.count != count)
+			if (list1.count != count)
 			{
 				return false;
 			}
-			for (int i = 0;i < count; ++i)
+			while (head->next == nullptr)   
 			{
-				if (head->data != temp->data)
+				if (head->data != list1.head->data)
 				{
 					return false;
 				}
 				head = head->next;
-				temp = temp->next;
+				list1.head = list1.head->next;
 			}
 			return true;
+		}
+
+		LinkedList& operator=(LinkedList& list)
+        {
+			Node* temp = list.head;
+			for (int i = 0; i < list.count; ++i)
+			{
+				push_back(temp->data);
+				temp = temp->next;
+			}
+			return (*this);
+        }
+
+		void clear()
+		{
+			Node* temp = nullptr;
+			while(head != nullptr) 
+			{
+				temp = head -> next;
+				delete head;
+				head = temp;	
+			}
+			head = nullptr;
+			return;
 		}
 
 		void push_forward(int data)
@@ -135,10 +158,10 @@ public:
 			if (count == 0)
 			{
 				return 0;
-			}
-			int result = head->data;
+			}		
 			Node* temp = head;
 			head = head->next;
+			int result = head->data; // ?
 			delete temp;
 			--count;
 			if (count == 0)
@@ -163,7 +186,7 @@ public:
 			{
 				temp = temp->next;
 			}
-			int result = temp->next->data;
+			int result = temp->data; //?
 			delete temp->next;
 			temp->next = nullptr;
 			--count;
@@ -198,6 +221,38 @@ public:
 			return result;
 		}
 
+		void extract_by_value(int value)
+		{
+			if (count <= 0)
+			{
+				return;
+			}
+			
+			Node* temp = head;
+			for (int i = 0; i < count; ++i)
+			{
+				if(temp->data == value)
+				{
+					extractElement(i);
+					extract_by_value(value);
+					
+				}
+				temp = temp->next;
+
+			}
+
+		}
+
+		void combine_list(LinkedList& list)
+		{
+			Node* temp = list.head;
+			for (int i = 0; i < list.count; ++i)
+			{
+				push_back(temp->data);
+				temp = temp->next;
+			}
+		}
+
 		friend ostream& operator<<(ostream& stream, const LinkedList& list)
 		{
 			Node* temp = list.head;
@@ -214,15 +269,41 @@ public:
 
 int main(int argc, char* argv[])
 {
-    LinkedList list;
+	LinkedList list;
+	LinkedList list1;
 	cout << list << endl;
 	list.push_back(1);
     list.push_back(2);
-    list.push_back(3);
-    list.push_back(4);
-    list.insert(1,2);
-    cout << list << endl;
-    
+	list.push_back(3);
+	list.push_back(3);
+
+
+	cout << list << endl;
+	list1.push_back(1);
+    list1.push_back(4);
+
+
+	cout << list1 << endl;
+	if (list1 == list)
+	{
+		cout << "true" << endl;
+	}
+	else
+	{
+		cout << "false" << endl;
+	}
+	
+	cout << list << endl;
+	cout << list1 << endl;
+	list.combine_list(list1);
+
+	cout<< list << endl;
+
+
+
+
+
+
 
 
 	return EXIT_SUCCESS;
