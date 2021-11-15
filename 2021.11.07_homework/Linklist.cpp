@@ -85,6 +85,7 @@ public:
 
 		LinkedList& operator=(LinkedList& list)
         {
+			clear();
 			Node* temp = list.head;
 			for (int i = 0; i < list.count; ++i)
 			{
